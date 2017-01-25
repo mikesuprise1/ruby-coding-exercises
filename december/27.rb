@@ -1,6 +1,9 @@
 require 'rspec'
 
 def palindrome? word
+	letters = word.downcase
+	letters == letters.reverse
+# word.downcase == word.downcase.reverse
 end
 
 describe 'Check if a word is a palindrome' do
@@ -10,3 +13,5 @@ describe 'Check if a word is a palindrome' do
     expect(palindrome?('baseball')).to be(false)
   end
 end
+
+
