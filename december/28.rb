@@ -1,6 +1,7 @@
 require 'rspec'
 
 def array_converter *arrays
+	arrays.flatten.map(&:to_i)
 end
 
 describe 'Combine arrays and convert strings to integers' do
