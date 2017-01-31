@@ -3,10 +3,12 @@ require 'rspec'
 menu = {
   'appetizers': ['Chips', 'Quesadillas', 'Flatbread'],
   'entrees': ['Steak', 'Chicken', 'Lobster'],
-  'dessers': ['Cheesecake', 'Cake', 'Cupcake']
+  'desserts': ['Cheesecake', 'Cake', 'Cupcake']
 }
 
 def daily_special hash
+	menu_items = []
+	hash.map { |category| menu_items << category.last }.flatten.sample
 end
 
 describe 'Nested hash element selector' do
