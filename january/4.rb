@@ -1,6 +1,16 @@
 require 'rspec'
 
+module RubyContent
+  refine String do
+    def commentize
+      "# #{self}"
+    end
+  end
+end
+
 class ContentController
+  using RubyContent
+
   def initialize(word)
     @word = word
   end
