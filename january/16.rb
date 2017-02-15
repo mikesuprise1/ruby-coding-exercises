@@ -1,6 +1,7 @@
 require 'rspec'
 
 def array_rotation arr, num
+	arr.rotate(num)
 end
 
 describe 'Array index change' do
