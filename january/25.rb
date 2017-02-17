@@ -1,5 +1,11 @@
 require 'rspec'
 
+def lineup_generator (players)
+  players.map.with_index(1) do | index, player|
+    yield(player, index)
+  end
+end
+
 describe 'Lineup Generator' do
   before do
     @players = ['Altuve', 'Correa', 'Bregman']

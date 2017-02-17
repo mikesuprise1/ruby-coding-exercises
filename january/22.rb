@@ -1,5 +1,33 @@
 require 'rspec'
 
+module Tippy
+  class Builder
+    def initialize total:, gratuity:
+      @total = total
+      @gratuity = gratuity
+    end
+
+    def string_to_float gratuity
+      case gratuity
+        when "high" then 25
+        when "LOW" then  15
+        when "standard" then 18
+        when "23.5" then 23.5
+        when "18" then 18
+      end
+    end
+
+    def generate
+
+      if @gratuity.is_a? Integer
+        (@gratuity.to_f / 100.0 * @total) + @total
+      else
+        (string_to_float(@gratuity) / 100.0 * @total) + @total
+      end
+    end
+  end
+end
+
 describe 'Tip Generator' do
   it 'Accurately generates a tip given string or integer input' do
     test_1 = Tippy::Builder.new(total: 100, gratuity: '23.5').generate

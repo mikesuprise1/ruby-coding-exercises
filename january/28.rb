@@ -2,6 +2,7 @@ require 'rspec'
 require 'date'
 
 def day_counter
+	Date.new(2016, 12, 25) - Date.new(2004, 7, 1)
 end
 
 describe 'Day counter' do
