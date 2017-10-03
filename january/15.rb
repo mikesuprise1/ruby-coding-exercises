@@ -1,16 +1,16 @@
 require 'rspec'
 
 class String
-	def alt_reverse
-		reversed_string = ""
-		string_length = self.length - 1
+  def alt_reverse
+    reversed_string = ""
+    string_length = self.length - 1
 
-		string_length.downto(0).each do |l|
-			reversed_string << self|l|
-		end
+    string_length.downto(0).each do |l|
+      reversed_string << self[l]
+    end
 
-		reversed_string
-	end
+    reversed_string
+  end
 end
 
 describe 'Letter reversing' do
@@ -18,4 +18,3 @@ describe 'Letter reversing' do
     expect("Hi there".alt_reverse).to eq("ereht iH")
   end
 end
-
