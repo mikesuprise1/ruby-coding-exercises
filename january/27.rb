@@ -1,5 +1,7 @@
 require 'rspec'
 
+def cloned_image_tag
+
 describe 'Cloned image_tag' do
   before do
     @image_path = "https://devcamp.com/some_pic.jpg"
